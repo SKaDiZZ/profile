@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SKaDiZZ/profile/static/css/main.9d5b29c0.chunk.css",
+    "main.css": "/SKaDiZZ/profile/static/css/main.d2cf9370.chunk.css",
     "main.js": "/SKaDiZZ/profile/static/js/main.fc911128.chunk.js",
     "main.js.map": "/SKaDiZZ/profile/static/js/main.fc911128.chunk.js.map",
     "runtime-main.js": "/SKaDiZZ/profile/static/js/runtime-main.0c02e40d.js",
@@ -10,14 +10,14 @@
     "static/js/3.aa66e528.chunk.js": "/SKaDiZZ/profile/static/js/3.aa66e528.chunk.js",
     "static/js/3.aa66e528.chunk.js.map": "/SKaDiZZ/profile/static/js/3.aa66e528.chunk.js.map",
     "index.html": "/SKaDiZZ/profile/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/SKaDiZZ/profile/static/css/main.9d5b29c0.chunk.css.map",
+    "static/css/main.d2cf9370.chunk.css.map": "/SKaDiZZ/profile/static/css/main.d2cf9370.chunk.css.map",
     "static/js/2.65059787.chunk.js.LICENSE.txt": "/SKaDiZZ/profile/static/js/2.65059787.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/SKaDiZZ/profile/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0c02e40d.js",
     "static/js/2.65059787.chunk.js",
-    "static/css/main.9d5b29c0.chunk.css",
+    "static/css/main.d2cf9370.chunk.css",
     "static/js/main.fc911128.chunk.js"
   ]
 }
