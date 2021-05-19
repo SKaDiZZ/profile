@@ -6,8 +6,10 @@
   --main-bg: #0e1630;
   --main-fg: #808dad;
   --main-brand: #eb4a4a;
+  --font-family: "Quicksand", sans-serif;
 }
 
 body {
+  font-family: "Quicksand", sans-serif;
   @apply bg-main-bg text-main-fg;
 }
