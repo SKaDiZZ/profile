@@ -4,24 +4,42 @@ import Home from "./pages/home/Home";
 
 function App() {
   return (
-    <div className="container mx-auto px-6 sm:px-0">
-      <header className="h-32 flex justify-between items-center border-b">
+    <div className="container mx-auto max-w-screen-lg  px-6">
+      <header className="h-24 flex justify-between items-center my-10">
+        <div>
+          <h3 className="font-logo text-5xl text-white">
+            <span className="text-main-brand">S</span>amir
+          </h3>
+          <h4 className="text-xs tracking-widest">
+            <span className="text-white">KAHVEDZIC</span>/SKADIZZ
+          </h4>
+        </div>
         <nav>
-          <ul className="flex gap-6 text-xl font-medium">
+          <ul className="main-nav">
             <li>
-              <NavLink to="/home">Home</NavLink>
+              <NavLink to="/" exact={true} activeClassName="active">
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/home">About Me</NavLink>
+              <NavLink to="/home" activeClassName="active">
+                About Me
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/home">Projects</NavLink>
+              <NavLink to="/home" activeClassName="active">
+                Projects
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/home">Experience</NavLink>
+              <NavLink to="/home" activeClassName="active">
+                Experience
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/home">Contact Me</NavLink>
+              <NavLink to="/home" activeClassName="active">
+                Contact Me
+              </NavLink>
             </li>
           </ul>
         </nav>
