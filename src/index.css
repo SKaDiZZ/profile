@@ -42,3 +42,35 @@ body {
 .soc-icon {
   @apply bg-card-bg rounded-full w-10 h-10 flex justify-center items-center hover:bg-main-accent cursor-pointer;
 }
+
+.tag-list {
+  @apply flex text-xs mt-6;
+}
+
+.tag {
+  @apply p-2 bg-card-button-bg rounded-xl font-bold text-main-bg hover:text-main-brand;
+}
+
+.card {
+  @apply bg-card-bg rounded-xl p-4 flex flex-wrap content-between;
+}
+
+.card-title {
+  @apply text-xl font-bold text-white mb-6;
+}
+
+.card-subtitle {
+  @apply font-bold text-main-brand flex items-center mb-6 w-full;
+}
+
+.video-container {
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  @apply relative h-0 overflow-hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  @apply absolute top-0 left-0 h-full w-full;
+}

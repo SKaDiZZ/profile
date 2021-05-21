@@ -69,6 +69,28 @@ const AboutMe = () => (
         </div>
       </div>
     </div>
+    <div className="col-span-3 sm:col-span-2">
+      <div className="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/N8jMzuNdSew"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div className="col-span-3 sm:col-span-1">
+      <h4 className="text-xl font-bold text-main-brand flex items-center mb-6">
+        <StrokeIcon />
+        Code
+      </h4>
+      <h2 className="text-4xl font-bold text-white mb-12">Watch me code</h2>
+      <p>
+        Speed coding classic brick breaker game on codepen using HTML Canvas and
+        vanila Javascript followed by some cool music in the background.
+      </p>
+    </div>
   </div>
 );
 

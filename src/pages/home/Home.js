@@ -11,6 +11,7 @@ import StrokeIcon from "../../shared/icon-components/StrokeIcon";
 import TemplateIcon from "../../shared/icon-components/TemplateIcon";
 import TwitterIcon from "../../shared/icon-components/TwitterIcon";
 import AboutMe from "../../shared/layout-components/AboutMe";
+import Projects from "../../shared/layout-components/Projects";
 import Timeline from "../../shared/layout-components/Timeline";
 
 const Home = () => {
@@ -181,6 +182,7 @@ const Home = () => {
         </div>
       </div>
       <AboutMe />
+      <Projects />
       <Timeline />
     </div>
   );
