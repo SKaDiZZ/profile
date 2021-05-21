@@ -13,7 +13,7 @@ module.exports = {
         "main-brand": "var(--main-brand)",
         "main-accent": "var(--main-accent)",
         "card-bg": "var(--card-bg)",
-        "card-buton-bg": "var(--card-button-bg)",
+        "card-button-bg": "var(--card-button-bg)",
       },
     },
   },
