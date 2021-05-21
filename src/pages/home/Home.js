@@ -1,67 +1,46 @@
 import profile from "../../assets/images/profile.png";
+import samke from "../../assets/images/samke.png";
+import DatabaseIcon from "../../shared/icon-components/DatabaseIcon";
+import DownloadIcon from "../../shared/icon-components/DownloadIcon";
+import MobileIcon from "../../shared/icon-components/MobileIcon";
 import StrokeIcon from "../../shared/icon-components/StrokeIcon";
+import TemplateIcon from "../../shared/icon-components/TemplateIcon";
 
 const Home = () => {
   return (
-    <div className="flex-col">
-      <div className="flex items-center">
-        <div className="flex-auto">
+    <div>
+      <div className="sm:flex items-center">
+        <div className="w-full sm:w-1/2">
           <h3 className="text-2xl font-bold text-main-brand flex items-center mb-6">
             <StrokeIcon />
             Hello
           </h3>
-          <h1 className="text-8xl font-bold text-white">
+          <h1 className="text-5xl sm:text-8xl font-bold text-white">
             I'M SAMIR <br /> KAHVEDZIC
           </h1>
           <h2 className="text-4xl my-6">Senior Software Developer</h2>
-          <div className="flex gap-12 items-center">
+          <div className="flex items-center">
             <a
-              className="px-6 py-4 rounded-xl bg-card-bg hover:text-main-accent"
+              className="px-6 py-4 rounded-xl bg-card-bg hover:ring-2 hover:text-main-accent mr-4"
               href="mailto:akirapowered@gmail.com"
             >
               Contact Me
             </a>
             <a href="#" className="text-main-accent hover:underline flex">
-              <svg
-                className="w-6 h-6 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>{" "}
+              <DownloadIcon />
               Download CV
             </a>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-full sm:w-1/2">
           <img src={profile} alt="samir" />
         </div>
       </div>
-      <div className="flex items-center my-24 gap-12">
-        <div className="w-full sm:w-3/4">
-          <div className="grid grid-cols-2 grid-rows-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 my-12 w-full">
+        <div className="col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-3 gap-2">
             <div className="bg-card-bg rounded-xl rounded-tr-none p-4 flex">
-              <svg
-                className="w-12 h-12 mr-4 text-main-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1"
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                ></path>
-              </svg>
+              <MobileIcon />
               <div className="text-white">
                 Mobile Development
                 <br />
@@ -70,21 +49,8 @@ const Home = () => {
                 </span>
               </div>
             </div>
-            <div className="bg-card-bg rounded-xl rounded-bl-none p-4 flex row-start-2 col-start-2 col-end-2">
-              <svg
-                className="w-12 h-12 mr-4 text-main-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1"
-                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-                ></path>
-              </svg>
+            <div className="bg-card-bg rounded-xl rounded-bl-none p-4 flex row-start-2 sm:col-start-2 col-end-2">
+              <TemplateIcon />
               <div className="text-white">
                 Web Development
                 <br />
@@ -92,20 +58,7 @@ const Home = () => {
               </div>
             </div>
             <div className="bg-card-bg rounded-xl rounded-br-none p-4 flex row-start-3">
-              <svg
-                className="w-12 h-12 mr-4 text-main-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1"
-                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                ></path>
-              </svg>
+              <DatabaseIcon />
               <div className="text-white">
                 Backend
                 <br />
@@ -113,9 +66,12 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <div className="mt-16">
+            <img src={samke} alt="samir" />
+          </div>
         </div>
 
-        <div className="w-full sm:w-1/2">
+        <div className="col-span-1">
           <h4 className="text-xl font-bold text-main-brand flex items-center mb-6">
             <StrokeIcon />
             What I do?
@@ -131,7 +87,6 @@ const Home = () => {
               rel="noreferrer"
               target="_blank"
             >
-              {" "}
               WeOwn Market
             </a>{" "}
             as frontend tech lead. I lead development of multiple web and mobile
