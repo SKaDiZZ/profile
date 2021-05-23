@@ -17,7 +17,9 @@ const ProjectCard = ({ client, name, url, description, tags }) => (
     </div>
     <div className="tag-list">
       {tags.map((tag) => (
-        <div className="tag mr-2">{tag}</div>
+        <div className="tag mr-2" key={tag}>
+          {tag}
+        </div>
       ))}
     </div>
   </div>

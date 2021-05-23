@@ -82,3 +82,7 @@ nav.open {
 .video-container embed {
   @apply absolute top-0 left-0 h-full w-full;
 }
+
+.contact-link {
+  @apply p-2 rounded border border-main-fg flex hover:border-main-accent hover:text-main-accent cursor-pointer;
+}

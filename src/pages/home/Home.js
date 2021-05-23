@@ -6,7 +6,9 @@ import MobileIcon from "../../shared/icon-components/MobileIcon";
 import StrokeIcon from "../../shared/icon-components/StrokeIcon";
 import TemplateIcon from "../../shared/icon-components/TemplateIcon";
 import AboutMe from "../../shared/layout-components/AboutMe";
+import ContactMe from "../../shared/layout-components/ContactMe";
 import FollowMe from "../../shared/layout-components/FollowMe";
+import Footer from "../../shared/layout-components/Footer";
 import Projects from "../../shared/layout-components/Projects";
 import Timeline from "../../shared/layout-components/Timeline";
 
@@ -127,6 +129,8 @@ const Home = () => {
       <AboutMe />
       <Projects />
       <Timeline />
+      <ContactMe />
+      <Footer />
     </div>
   );
 };

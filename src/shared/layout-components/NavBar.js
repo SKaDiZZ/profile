@@ -105,7 +105,13 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/home" activeClass="active" spy={true} smooth={true}>
+              <Link
+                to="contact-me"
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                onSetActive={onSetActive}
+              >
                 Contact Me
               </Link>
             </li>

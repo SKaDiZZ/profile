@@ -1,5 +1,6 @@
 const projectList = [
   {
+    id: 1,
     client: "Definity",
     name: "Clarity",
     url: "https://clarity.definity.network",
@@ -8,6 +9,7 @@ const projectList = [
     tags: ["PWA", "Angular", "Blockchain"],
   },
   {
+    id: 2,
     client: "WeOwn",
     name: "Blockchain Explorer",
     url: "https://explorer.weown.com",
@@ -16,6 +18,7 @@ const projectList = [
     tags: ["WebApp", "Angular", "Blockchain"],
   },
   {
+    id: 3,
     client: "WeOwn",
     name: "Wallet",
     url: "https://wallet.weown.com",
@@ -24,6 +27,7 @@ const projectList = [
     tags: ["WebApp", "Angular", "Blockchain"],
   },
   {
+    id: 4,
     client: "WeOwn",
     name: "Localization App",
     url: "https://wallet.weown.com",
@@ -32,6 +36,7 @@ const projectList = [
     tags: ["WebApp", "Angular"],
   },
   {
+    id: 5,
     client: "WeOwn",
     name: "Market Operator App",
     url: "https://marketoperator.weown.com",
@@ -40,6 +45,7 @@ const projectList = [
     tags: ["WebApp", "Angular"],
   },
   {
+    id: 6,
     client: "WeOwn",
     name: "Console App",
     url: "https://console.weown.com",
@@ -48,6 +54,7 @@ const projectList = [
     tags: ["WebApp", "Angular"],
   },
   {
+    id: 7,
     client: "WeOwn",
     name: "Money Turtle",
     url: "https://start.moneyturtle.app",
@@ -56,6 +63,7 @@ const projectList = [
     tags: ["PWA", "Angular", "Blockchain"],
   },
   {
+    id: 8,
     client: "WeOwn",
     name: "Investor App",
     url: "https://investor.weown.com",
@@ -64,6 +72,7 @@ const projectList = [
     tags: ["PWA", "Angular", "Blockchain"],
   },
   {
+    id: 9,
     client: "WeOwn",
     name: "Business platform",
     url: "https://platform.weown.com",
@@ -72,6 +81,7 @@ const projectList = [
     tags: ["WebApp", "Angular", "Blockchain"],
   },
   {
+    id: 10,
     client: "Findustrial",
     name: "Findustrial Pay-per-Use Platform",
     url: "https://app.findustrial.io",
