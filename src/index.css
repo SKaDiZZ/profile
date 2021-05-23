@@ -23,12 +23,20 @@ body {
   @apply container mx-auto max-w-screen-lg px-6;
 }
 
+nav {
+  @apply w-full sm:w-auto bg-main-bg sm:bg-transparent fixed sm:relative bottom-0 left-0 right-0 sm:top-0 transform translate-y-full sm:translate-y-0 transition-all duration-150 ease-in-out;
+}
+
+nav.open {
+  @apply translate-y-0;
+}
+
 .main-nav {
   @apply sm:flex text-lg font-medium;
 }
 
 .main-nav li {
-  @apply sm:ml-12;
+  @apply my-12 sm:my-0 sm:ml-12 text-center;
 }
 
 .main-nav li a {

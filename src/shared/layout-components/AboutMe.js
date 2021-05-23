@@ -4,7 +4,7 @@ import kerimisamir from "../../assets/images/samirikerim.png";
 const AboutMe = () => (
   <div
     id="about-me"
-    className="grid grid-cols-1 sm:grid-cols-3 sm:gap-12 my-12 w-full"
+    className="grid grid-cols-1 sm:grid-cols-3 gap-12 my-12 w-full"
   >
     <div className="col-span-2 sm:col-span-1">
       <h4 className="text-xl font-bold text-main-brand flex items-center mb-6">
@@ -74,9 +74,9 @@ const AboutMe = () => (
         <iframe
           src="https://www.youtube.com/embed/N8jMzuNdSew"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const userScrolled = () => {
     setHasScrolled(true);
@@ -10,6 +11,19 @@ const NavBar = () => {
 
   const userBackToTop = () => {
     setHasScrolled(false);
+    if (open) {
+      setOpen(false);
+    }
+  };
+
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
+
+  const onSetActive = () => {
+    if (open) {
+      setOpen(false);
+    }
   };
 
   return (
@@ -18,7 +32,7 @@ const NavBar = () => {
         "my-10 sticky top-0 z-10  " + (hasScrolled ? "bg-main-bg" : "")
       }
     >
-      <div className="h-24 main-container flex justify-between items-center">
+      <div className="h-24 main-container flex justify-between items-center relative">
         <div>
           <h3 className="font-logo text-5xl text-white">
             <span className="text-main-brand">S</span>amir
@@ -27,7 +41,7 @@ const NavBar = () => {
             <span className="text-white">KAHVEDZIC</span>/SKADIZZ
           </h4>
         </div>
-        <nav>
+        <nav className={open ? "open" : ""}>
           <ul className="main-nav">
             <li>
               <Link
@@ -49,6 +63,7 @@ const NavBar = () => {
                 spy={true}
                 smooth={true}
                 offset={-120}
+                onSetActive={onSetActive}
               >
                 What I do?
               </Link>
@@ -60,6 +75,7 @@ const NavBar = () => {
                 spy={true}
                 smooth={true}
                 offset={-120}
+                onSetActive={onSetActive}
               >
                 About Me
               </Link>
@@ -71,6 +87,7 @@ const NavBar = () => {
                 spy={true}
                 smooth={true}
                 offset={-120}
+                onSetActive={onSetActive}
               >
                 Projects
               </Link>
@@ -82,6 +99,7 @@ const NavBar = () => {
                 spy={true}
                 smooth={true}
                 offset={-120}
+                onSetActive={onSetActive}
               >
                 Experience
               </Link>
@@ -93,6 +111,25 @@ const NavBar = () => {
             </li>
           </ul>
         </nav>
+        <div
+          className="sm:hidden p-2 rounded border border-main-fg"
+          onClick={toggleOpen}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </div>
       </div>
     </header>
   );

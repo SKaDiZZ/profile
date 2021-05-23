@@ -11,7 +11,7 @@ const Projects = () => (
         Projects
       </h4>
       <h2 className="text-4xl font-bold text-white mb-12">
-        Some of projects I worked on and some of those I'm still working on
+        Some of my recent projects
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
         <div className="card">
