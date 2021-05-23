@@ -1,16 +1,12 @@
 import profile from "../../assets/images/profile.png";
 import samke from "../../assets/images/samke.png";
 import DatabaseIcon from "../../shared/icon-components/DatabaseIcon";
-import DeviantartIcon from "../../shared/icon-components/DeviantartIcon";
 import DownloadIcon from "../../shared/icon-components/DownloadIcon";
-import GithubIcon from "../../shared/icon-components/GithubIcon";
-import LinkedinIcon from "../../shared/icon-components/LinkedinIcon";
 import MobileIcon from "../../shared/icon-components/MobileIcon";
-import NpmIcon from "../../shared/icon-components/NpmIcon";
 import StrokeIcon from "../../shared/icon-components/StrokeIcon";
 import TemplateIcon from "../../shared/icon-components/TemplateIcon";
-import TwitterIcon from "../../shared/icon-components/TwitterIcon";
 import AboutMe from "../../shared/layout-components/AboutMe";
+import FollowMe from "../../shared/layout-components/FollowMe";
 import Projects from "../../shared/layout-components/Projects";
 import Timeline from "../../shared/layout-components/Timeline";
 
@@ -125,60 +121,7 @@ const Home = () => {
             I'm helping others in their work by releasing useful NPM packages
             and libraries.
           </p>
-          <h4 className="text-xl font-bold text-main-brand flex items-center mb-6">
-            <StrokeIcon />
-            Follow?
-          </h4>
-          <h2 className="text-4xl font-bold text-white mb-12">
-            Follow me and my work
-          </h2>
-          <div className="flex">
-            <a
-              className="soc-icon mr-4"
-              href="https://github.com/SKaDiZZ"
-              target="_blank"
-              rel="noreferrer"
-              title="GitHub"
-            >
-              <GithubIcon />
-            </a>
-            <a
-              className="soc-icon mr-4"
-              href="https://www.npmjs.com/~skadizz"
-              target="_blank"
-              rel="noreferrer"
-              title="NPM"
-            >
-              <NpmIcon />
-            </a>
-            <a
-              className="soc-icon mr-4"
-              href="https://www.linkedin.com/in/samir-kahvedzic-96265594"
-              target="_blank"
-              rel="noreferrer"
-              title="LinkedIn"
-            >
-              <LinkedinIcon />
-            </a>
-            <a
-              className="soc-icon mr-4"
-              href="https://twitter.com/SKaDiZZ"
-              target="_blank"
-              rel="noreferrer"
-              title="Twitter"
-            >
-              <TwitterIcon />
-            </a>
-            <a
-              className="soc-icon"
-              href="https://www.deviantart.com/samirkahvedzic"
-              target="_blank"
-              rel="noreferrer"
-              title="DeviantArt"
-            >
-              <DeviantartIcon />
-            </a>
-          </div>
+          <FollowMe />
         </div>
       </div>
       <AboutMe />
