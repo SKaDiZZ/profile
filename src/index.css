@@ -84,5 +84,13 @@ nav.open {
 }
 
 .contact-link {
-  @apply p-2 rounded border border-main-fg flex hover:border-main-accent hover:text-main-accent cursor-pointer;
+  @apply px-6 py-4 rounded border border-card-bg flex items-center hover:border-main-accent hover:text-main-accent cursor-pointer;
+}
+
+.btn {
+  @apply px-6 py-2 bg-card-bg rounded-xl border border-main-fg inline hover:text-white hover:border-white focus:outline-none;
+}
+
+.input {
+  @apply px-6 py-4 bg-card-bg rounded-xl focus:ring-1 focus:ring-main-accent focus:outline-none;
 }

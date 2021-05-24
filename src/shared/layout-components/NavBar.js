@@ -110,6 +110,7 @@ const NavBar = () => {
                 activeClass="active"
                 spy={true}
                 smooth={true}
+                offset={-215}
                 onSetActive={onSetActive}
               >
                 Contact Me

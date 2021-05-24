@@ -27,7 +27,7 @@ const Home = () => {
           <h2 className="text-4xl my-6">Senior Software Developer</h2>
           <div className="flex items-center">
             <a
-              className="px-6 py-4 rounded-xl bg-card-bg hover:ring-2 hover:text-main-accent mr-4 sm:mr-12"
+              className="btn mr-4 sm:mr-12"
               href="mailto:akirapowered@gmail.com"
             >
               Contact Me
