@@ -5,7 +5,8 @@ const Footer = () => (
     <span className="text-red-500 mr-4">
       <HeartIcon />
     </span>{" "}
-    Created with love by Samir Kahvedzic, All CopyRights Reserved 2021.
+    Created with <span className="text-main-accent mx-2"> Love </span> by Samir
+    Kahvedzic All CopyRights Reserved 2021.
   </footer>
 );
 

@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import profile from "../../assets/images/profile.png";
 import samke from "../../assets/images/samke.png";
 import DatabaseIcon from "../../shared/icon-components/DatabaseIcon";
@@ -26,12 +27,16 @@ const Home = () => {
           </h1>
           <h2 className="text-4xl my-6">Senior Software Developer</h2>
           <div className="flex items-center">
-            <a
-              className="btn mr-4 sm:mr-12"
-              href="mailto:akirapowered@gmail.com"
+            <Link
+              to="contact-me"
+              className="btn mr-4 sm:mr-12 cursor-pointer"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-215}
             >
               Contact Me
-            </a>
+            </Link>
             <a href="#" className="text-main-accent hover:underline flex">
               <DownloadIcon />
               Download CV
