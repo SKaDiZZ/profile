@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# My profile website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Profile website hosted on GitHub pages made with React. You can check my website at [https://samirkahvedzic.info](https://samirkahvedzic.info);
 
 ## Available Scripts
 
@@ -63,7 +63,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Run to deploy to GitHub Pages
+
+### `npm run deploy`
 
 ### `npm run build` fails to minify
 

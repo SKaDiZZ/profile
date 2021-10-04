@@ -1,5 +1,14 @@
 const projectList = [
   {
+    id: 0,
+    client: "Definity",
+    name: "Administration Interface",
+    url: "https://admin.definity.network",
+    description:
+      "Application giving overview of trading messages and activity with FIX and Blockchain layers. Features complex data grids supporting column ordering, pining, filtering, selection, custom templating, saving and restoring datatable state, pagination, sorting and more.",
+    tags: ["Angular", "Blockchain"],
+  },
+  {
     id: 1,
     client: "Definity",
     name: "Clarity",
@@ -30,9 +39,9 @@ const projectList = [
     id: 4,
     client: "WeOwn",
     name: "Localization App",
-    url: "https://wallet.weown.com",
+    url: "https://localization.weown.com",
     description:
-      "Web application for localization management in WeOwn apps. Allows adding translation terms for different languages, searching and filtering by term or translation.",
+      "Web application for localization management in WeOwn apps. Features adding translation terms for different languages, searching and filtering by term or translation, inline editing of text and HTML data.",
     tags: ["WebApp", "Angular"],
   },
   {
