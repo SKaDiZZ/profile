@@ -1,1 +1,12 @@
+#root {
+  max-width: 1280px;
+  @apply mx-auto p-0 md:p-8 text-center;
+}
 
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

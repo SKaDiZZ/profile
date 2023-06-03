@@ -19,7 +19,7 @@ const eventList = [
   {
     id: 2,
     position: "left",
-    timespan: "2019 - NOW",
+    timespan: "2019 - 2021",
     title:
       "Findustrial GmbH, Schörfling am Attersee, Austria, remote (part time) — Frontend Tech Lead",
     description:

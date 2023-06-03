@@ -1,6 +1,31 @@
 const projectList = [
   {
     id: 0,
+    client: "Roarington",
+    name: "Roarington Metaland",
+    url: "https://roarington.com",
+    description:
+      "Roarington is the virtual ecosystem of classic cars, where automotive cultural assets from the 20th century find a second digital life in the 21st century. Join the petrol head's community and access virtual showrooms, latest news, and get a digital twin of your classic car.",
+    tags: [
+      "Angular",
+      "PWA",
+      "SSR",
+      "Metaverse",
+      "Pixel Streaming",
+      "Video Streaming",
+    ],
+  },
+  {
+    id: 1,
+    client: "PoveziMe",
+    name: "PoveziMe",
+    url: "https://povezime.com",
+    description:
+      "Ridesharing application for drivers and passengers. Drivers can search for rides, book them and pay for them. Passengers can search for rides, book them and pay for them. The app is built with Flutter",
+    tags: ["Flutter", "WebApp", "PWA"],
+  },
+  {
+    id: 2,
     client: "Definity",
     name: "Administration Interface",
     url: "https://admin.definity.network",
@@ -9,7 +34,7 @@ const projectList = [
     tags: ["Angular", "Blockchain"],
   },
   {
-    id: 1,
+    id: 3,
     client: "Definity",
     name: "Clarity",
     url: "https://clarity.definity.network",
@@ -18,7 +43,7 @@ const projectList = [
     tags: ["PWA", "Angular", "Blockchain"],
   },
   {
-    id: 2,
+    id: 4,
     client: "WeOwn",
     name: "Blockchain Explorer",
     url: "https://explorer.weown.com",
@@ -27,7 +52,7 @@ const projectList = [
     tags: ["WebApp", "Angular", "Blockchain"],
   },
   {
-    id: 3,
+    id: 5,
     client: "WeOwn",
     name: "Wallet",
     url: "https://wallet.weown.com",
@@ -36,7 +61,7 @@ const projectList = [
     tags: ["WebApp", "Angular", "Blockchain"],
   },
   {
-    id: 4,
+    id: 6,
     client: "WeOwn",
     name: "Localization App",
     url: "https://localization.weown.com",
@@ -45,7 +70,7 @@ const projectList = [
     tags: ["WebApp", "Angular"],
   },
   {
-    id: 5,
+    id: 7,
     client: "WeOwn",
     name: "Market Operator App",
     url: "https://marketoperator.weown.com",
@@ -54,7 +79,7 @@ const projectList = [
     tags: ["WebApp", "Angular"],
   },
   {
-    id: 6,
+    id: 8,
     client: "WeOwn",
     name: "Console App",
     url: "https://console.weown.com",
@@ -63,7 +88,7 @@ const projectList = [
     tags: ["WebApp", "Angular"],
   },
   {
-    id: 7,
+    id: 9,
     client: "WeOwn",
     name: "Money Turtle",
     url: "https://start.moneyturtle.app",
@@ -72,7 +97,7 @@ const projectList = [
     tags: ["PWA", "Angular", "Blockchain"],
   },
   {
-    id: 8,
+    id: 10,
     client: "WeOwn",
     name: "Investor App",
     url: "https://investor.weown.com",
@@ -81,7 +106,7 @@ const projectList = [
     tags: ["PWA", "Angular", "Blockchain"],
   },
   {
-    id: 9,
+    id: 11,
     client: "WeOwn",
     name: "Business platform",
     url: "https://platform.weown.com",
@@ -90,7 +115,7 @@ const projectList = [
     tags: ["WebApp", "Angular", "Blockchain"],
   },
   {
-    id: 10,
+    id: 12,
     client: "Findustrial",
     name: "Findustrial Pay-per-Use Platform",
     url: "https://app.findustrial.io",
