@@ -1,0 +1,81 @@
+---
+---
+
+<header>
+    <nav>
+        <ul>
+            <span id="nav-indicator"></span>
+            <li id="intro-link">
+                <a href="#intro">Intro</a>
+            </li>
+            <li id="projects-link">
+                <a href="#projects">Projects</a>
+            </li>
+            <li id="experience-link">
+                <a href="#experience">Experience</a>
+            </li>
+            <li id="contact-link">
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header {
+        @apply fixed w-screen top-0;
+    }
+    nav {
+        @apply container mx-auto text-white flex justify-center py-12;
+    }
+    ul {
+        @apply flex items-center gap-6 bg-black/20 border  border-t-white/20 border-b-white/50 border-x-white/30 rounded-full px-4 py-4 relative shadow-[inset_0_5px_0_0_rgba(0,0,0,0.2)];
+    }
+    li {
+        @apply cursor-pointer ;
+    }
+    li a {
+        @apply text-fg px-4;
+    }
+    li.active a {
+        @apply text-white;
+    }
+    #nav-indicator {
+        @apply absolute h-10 w-16 bg-white/10 rounded-full transition-all duration-300 ease-in-out shadow-lg border-t border-t-white/50 border-b border-b-black;
+    }
+</style>
+
+<script>
+
+    const pages = document.querySelectorAll('section');
+
+    // move nav indicator on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                console.log(entry.target.id)
+                const navIndicator = document.getElementById('nav-indicator');
+                const targetLink = document.getElementById(`${entry.target.id}-link`);
+ 
+                if (navIndicator && targetLink) {
+                    targetLink.classList.add('active');
+                    navIndicator.style.width = `${targetLink.offsetWidth + 10}px`;
+                    navIndicator.style.transform = `translateX(${targetLink.offsetLeft - 20}px)`;
+                }
+                
+            }
+
+            if (!entry.isIntersecting) {
+                const targetLink = document.getElementById(`${entry.target.id}-link`);
+                if (targetLink) {
+                    targetLink.classList.remove('active');
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    pages.forEach((page) => {
+        observer.observe(page);
+    });
+
+</script>
