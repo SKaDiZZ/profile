@@ -1,22 +1,40 @@
 ---
+const links = [
+    {
+        id: 'intro-link',
+        href: '#intro',
+        title: 'Intro'
+    },
+    {
+        id: 'projects-link',
+        href: '#projects',
+        title: 'Projects'
+    },
+    {
+        id: 'experience-link',
+        href: '#experience',
+        title: 'Experience'
+    },
+    {
+        id: 'contact-link',
+        href: '#contact',
+        title: 'Contact'
+    }
+];
 ---
 
 <header>
     <nav>
         <ul>
+            <div class="static-bg"></div>
             <span id="nav-indicator"></span>
-            <li id="intro-link">
-                <a href="#intro">Intro</a>
-            </li>
-            <li id="projects-link">
-                <a href="#projects">Projects</a>
-            </li>
-            <li id="experience-link">
-                <a href="#experience">Experience</a>
-            </li>
-            <li id="contact-link">
-                <a href="#contact">Contact</a>
-            </li>
+            {
+                links.map((link) => (
+                    <li id={link.id}>
+                        <a href={link.href}>{link.title}</a>
+                    </li>
+                ))
+            }
         </ul>
     </nav>
 </header>
@@ -29,13 +47,13 @@
         @apply container mx-auto text-white flex justify-center py-12;
     }
     ul {
-        @apply flex items-center gap-6 bg-black/20 border  border-t-white/20 border-b-white/50 border-x-white/30 rounded-full px-4 py-4 relative shadow-[inset_0_5px_0_0_rgba(0,0,0,0.2)];
+        @apply flex items-center gap-2 xl:gap-6 bg-[#13151a] border  border-t-white/20 border-b-white/50 border-x-white/30 rounded-full px-4 py-4 relative shadow-[inset_0_5px_0_0_rgba(0,0,0,0.2)];
     }
     li {
-        @apply cursor-pointer ;
+        @apply cursor-pointer relative;
     }
     li a {
-        @apply text-fg px-4;
+        @apply flex h-full text-fg px-2 xl:px-4 hover:text-brand hover:drop-shadow;
     }
     li.active a {
         @apply text-white;
@@ -53,7 +71,6 @@
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                console.log(entry.target.id)
                 const navIndicator = document.getElementById('nav-indicator');
                 const targetLink = document.getElementById(`${entry.target.id}-link`);
  
