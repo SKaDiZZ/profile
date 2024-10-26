@@ -10,25 +10,75 @@
     rgb(var(--accent-light)) 30%,
     white 60%
   );
-  --main-bg: #0e1630;
+  --main-bg: #080d27;
   --main-fg: #808dad;
   --main-brand: #ebbd43;
   --main-accent: #fe0289;
   --card-bg: #171f38;
   --card-button-bg: #2c3246;
-  --font-main: "Quicksand", sans-serif;
-  --font-logo: "Suez One", serif;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: "Geist";
   background: #13151a;
+  @apply font-main;
 }
 
 html,
 body {
-  @apply h-screen;
+  color: #c4cbf5;
+  @apply h-screen bg-background-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 84px;
+  font-weight: 900;
+  line-height: 84px;
+  letter-spacing: -0.03em;
+  color: #eaedff;
+  text-transform: uppercase;
+}
+
+h2 {
+  max-width: 400px;
+  margin-bottom: 26px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  color: #eaedff;
+}
+
+.overhead {
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.3em;
+  color: var(--main-brand);
+  @apply font-heading text-[12px] uppercase;
+}
+
+.lead {
+  margin-bottom: 44px;
+  font-size: 22px;
+  line-height: 36px;
+}
+
+.lead-1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #eaedff;
 }
 
 code {
@@ -43,15 +93,8 @@ code {
     monospace;
 }
 
-.static-bg {
-  background-image: url("/images/Static.png");
-  @apply absolute h-full w-full left-0 top-0 right-0 bottom-0 opacity-5 sepia saturate-0;
-}
-
-.dots-bg {
-  @apply absolute h-full w-full bg-[radial-gradient(#2c3246_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-50;
-}
-
-.top-light-bg {
-  @apply absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))];
+.important-section {
+  position: relative;
+  padding: 96px 0 120px;
+  background: linear-gradient(#1b275a, #0e1434);
 }

@@ -11,6 +11,8 @@ import Linkedin from "../components/icons/Linkedin.astro";
 import Npm from "../components/icons/Npm.astro";
 import Github from "../components/icons/Github.astro";
 import LinkCard from "../components/LinkCard.astro";
+import Button from "../components/Button.astro";
+import InFocus from "../components/InFocus.astro";
 ---
 
 <Layout title="Samir Kahvedzic - Senior Software Developer - Profile">
@@ -31,7 +33,7 @@ import LinkCard from "../components/LinkCard.astro";
       <div class="grid grid-cols-5 xl:grid-cols-7 gap-2 xl:gap-5 mb-5">
         <div class="col-span-full xl:col-span-2">
           <Card>
-            <div class="py-6 fadeout-horizontal w-full overflow-hidden flex">
+            <div class="py-6 fadeout-horizontal w-full overflow-hidden flex h-full">
               <div class="marquee-text">
                 <div class="marquee-text-track">
                   <p>JavaScript</p>
@@ -89,7 +91,11 @@ import LinkCard from "../components/LinkCard.astro";
         <p class="p-6">
           Welcome to my online profile. Learn about me, my projects, experience,
           contact me.
+          <Button>Hello</Button>
         </p>
+        <InFocus>
+          <X classNames="w-6 h-6" />
+        </InFocus>
       </Card>
     </div>
   </section>
@@ -130,19 +136,8 @@ import LinkCard from "../components/LinkCard.astro";
     height: auto;
     z-index: -1;
   }
-  h1 {
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1;
-    @apply tracking-tighter;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
+
+
   .instructions {
     margin-bottom: 2rem;
     border: 1px solid rgba(var(--accent-light), 25%);
