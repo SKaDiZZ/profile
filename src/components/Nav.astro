@@ -1,123 +1,143 @@
 ---
+import Logo from "./Logo.astro";
+
 const links = [
-    {
-        id: 'intro-link',
-        href: '#intro',
-        title: 'Intro'
-    },
-    {
-        id: 'projects-link',
-        href: '#projects',
-        title: 'Projects'
-    },
-    {
-        id: 'experience-link',
-        href: '#experience',
-        title: 'Experience'
-    },
-    {
-        id: 'contact-link',
-        href: '#contact',
-        title: 'Contact'
-    }
+  {
+    id: "intro-link",
+    href: "#intro",
+    title: "Intro",
+  },
+  {
+    id: "projects-link",
+    href: "#projects",
+    title: "Projects",
+  },
+  {
+    id: "experience-link",
+    href: "#experience",
+    title: "Experience",
+  },
+  {
+    id: "contact-link",
+    href: "#contact",
+    title: "Contact",
+  },
 ];
 ---
 
 <header>
-    <nav>
-        <ul>
-            <div class="static-bg"></div>
-            <span id="nav-indicator"></span>
-            {
-                links.map((link) => (
-                    <li id={link.id}>
-                        <a href={link.href}>{link.title}</a>
-                    </li>
-                ))
-            }
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li class="flex flex-col gap-1">
+        <a href="#intro" class="logo">
+          <Logo />
+          Samir
+        </a>
+        <span class="sub text-[12px]">KAHVEDZIC/SKADIZZ</span>
+      </li>
+      {
+        links.map((link) => (
+          <li id={link.id}>
+            <a href={link.href}>{link.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <span id="nav-indicator"></span>
+  </nav>
 </header>
 
 <style>
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 50;
-        width: 100%;
-        padding: 40px 0;
-        transition: all .4s;
-    }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    padding: 40px 0;
+    transition: all 0.4s;
+  }
 
-    header.scrolled {
-        padding: 8px 0;
-        background: rgba(5, 9, 29, .95);
-        backdrop-filter: blur(8px);
-    }
-    nav {
-        @apply container mx-auto h-[56px] text-white flex justify-center;
-    }
-    ul {
-        @apply flex items-center relative justify-between w-full;
-    }
-    li {
-        @apply cursor-pointer relative;
-    }
-    li a {
-        line-height: 24px;
-        @apply relative text-base font-heading font-[700] text-[#eaedff] uppercase transition-colors duration-[400ms] cursor-pointer;
-    }
-    li a:hover {
-        @apply text-brand;
-    }
-    li.active a {
-        @apply text-accent;
-    }
-    #nav-indicator {
-        @apply absolute left-4 top-10 h-1 w-full bg-[#334679] transition-all duration-300 ease-in-out;
-    }
+  header.scrolled {
+    padding: 8px 0;
+    background: rgba(5, 9, 29, 0.95);
+    backdrop-filter: blur(8px);
+  }
+  nav {
+    @apply relative container mx-auto h-[56px] text-white flex justify-center;
+  }
+  ul {
+    @apply flex items-center relative justify-between w-full;
+  }
+  li {
+    @apply cursor-pointer relative;
+  }
+  li a {
+    line-height: 24px;
+    @apply relative text-base font-heading font-[700] text-[#eaedff] uppercase transition-colors duration-[400ms] cursor-pointer;
+  }
+  li a.logo {
+    @apply flex items-center gap-2 text-[2.6rem] transition-transform duration-300 ease-in-out;
+  }
+  header.scrolled li a.logo {
+    @apply scale-75;
+  }
+  .sub {
+    @apply transition-opacity duration-300 ease-in-out;
+  }
+  header.scrolled .sub {
+    @apply absolute -bottom-full opacity-0;
+  }
+  li a:hover {
+    @apply text-brand;
+  }
+  li.active a {
+    @apply text-brand;
+  }
+  #nav-indicator {
+    @apply absolute left-[13px] top-10 h-1 w-full bg-[#334679] transition-all duration-300 ease-in-out;
+  }
 </style>
 
 <script>
+  const pages = document.querySelectorAll("section");
+  const header = document.querySelector("header");
 
-    const pages = document.querySelectorAll('section');
-    const header = document.querySelector('header');
+  window.onscroll = () => {
+    if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  };
 
-    window.onscroll = () => {
-        if (window.scrollY > 0) {
-            header?.classList.add('scrolled');
-        } else {
-            header?.classList.remove('scrolled');
+  // move nav indicator on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const navIndicator = document.getElementById("nav-indicator");
+          const targetLink = document.getElementById(`${entry.target.id}-link`);
+
+          if (navIndicator && targetLink) {
+            targetLink.classList.add("active");
+            navIndicator.style.width = `${targetLink.offsetWidth + 10}px`;
+            navIndicator.style.transform = `translateX(${targetLink.offsetLeft - 20}px)`;
+          }
         }
-    };
 
-    // move nav indicator on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const navIndicator = document.getElementById('nav-indicator');
-                const targetLink = document.getElementById(`${entry.target.id}-link`);
- 
-                if (navIndicator && targetLink) {
-                    targetLink.classList.add('active');
-                    navIndicator.style.width = `${targetLink.offsetWidth + 10}px`;
-                    navIndicator.style.transform = `translateX(${targetLink.offsetLeft - 20}px)`;
-                }
-                
-            }
+        if (!entry.isIntersecting) {
+          const targetLink = document.getElementById(`${entry.target.id}-link`);
+          if (targetLink) {
+            targetLink.classList.remove("active");
+          }
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-            if (!entry.isIntersecting) {
-                const targetLink = document.getElementById(`${entry.target.id}-link`);
-                if (targetLink) {
-                    targetLink.classList.remove('active');
-                }
-            }
-        });
-    }, { threshold: 0.5 });
-
-    pages.forEach((page) => {
-        observer.observe(page);
-    });
-
+  pages.forEach((page) => {
+    observer.observe(page);
+  });
 </script>

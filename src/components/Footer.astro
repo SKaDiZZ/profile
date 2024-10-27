@@ -1,0 +1,83 @@
+---
+import ContactForm from "./ContactForm.astro";
+
+const links = [
+  {
+    id: "intro-link",
+    href: "#intro",
+    title: "Intro",
+  },
+  {
+    id: "projects-link",
+    href: "#projects",
+    title: "Projects",
+  },
+  {
+    id: "experience-link",
+    href: "#experience",
+    title: "Experience",
+  },
+  {
+    id: "contact-link",
+    href: "#contact",
+    title: "Contact",
+  },
+];
+---
+
+<footer>
+  <div class="container mx-auto flex flex-col xl:flex-row px-6 xl:px-0">
+    <div class="link-col flex flex-col justify-between">
+      <nav>
+        <ul>
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.href} title={link.title}>
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div>Created with Love by Samir Kahvedzic 2024.</div>
+    </div>
+    <div class="contact-col">
+      <h2>Contact me</h2>
+      <ContactForm />
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    @apply overflow-hidden py-[110px] relative;
+  }
+  footer:before {
+    background: rgba(25, 89, 173, 0.5);
+    @apply content-[""] absolute left-0 xl:left-[-160px] bottom-[-160px] w-[320px] h-[320px] filter blur-[200px] transform translate-x-0;
+  }
+
+  .link-col {
+    @apply w-full xl:w-1/2 xl:pr-16 relative;
+  }
+  .contact-col {
+    @apply w-full xl:w-1/2 xl:pl-[120px];
+  }
+  .contact-col:after {
+    @apply content-[""] absolute top-0 left-0 xl:left-1/2 z-[-1] w-full xl:w-[50%] h-full opacity-90 bg-gradient-to-b from-[#1b275a] to-[#0e1434];
+  }
+  nav {
+    @apply mb-[130px];
+  }
+  ul {
+    @apply list-none;
+  }
+  ul li {
+    @apply mb-[46px];
+  }
+  ul li a {
+    @apply transition-colors duration-300 ease-in-out text-[#c4cbf5] font-semibold text-[32px] leading-[40px] hover:text-brand font-heading;
+  }
+</style>

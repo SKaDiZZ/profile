@@ -1,0 +1,74 @@
+---
+import Card from "./Card.astro";
+import Deviantart from "./icons/Deviantart.astro";
+import Github from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Npm from "./icons/Npm.astro";
+import X from "./icons/X.astro";
+import InFocus from "./InFocus.astro";
+
+const socials = [
+  {
+    name: "Github",
+    url: "https://github.com/SKaDiZZ",
+  },
+  {
+    name: "Npm",
+    url: "https://www.npmjs.com/~skadizz",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/samir-kahvedzic-96265594",
+  },
+  {
+    name: "Deviantart",
+    url: "https://www.deviantart.com/samirkahvedzic",
+  },
+  {
+    name: "X",
+    url: "https://twitter.com/SKaDiZZ",
+  },
+];
+
+const { data = socials } = Astro.props;
+---
+
+<Card variant="featured">
+  <ul>
+    {
+      data.map((social: any) => (
+        <li>
+          <InFocus url={social.url}>
+            {social.name === "X" && <X />}
+            {social.name === "Deviantart" && <Deviantart />}
+            {social.name === "Github" && <Github />}
+            {social.name === "Linkedin" && <Linkedin />}
+            {social.name === "Npm" && <Npm />}
+          </InFocus>
+        </li>
+      ))
+    }
+  </ul>
+</Card>
+
+<style>
+  ul {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+  li {
+    position: relative;
+    padding: 64px 12px 56px;
+  }
+  li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: #0c1838;
+  }
+</style>

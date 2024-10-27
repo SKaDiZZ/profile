@@ -5,14 +5,14 @@ import Nav from "../components/Nav.astro";
 import Layout from "../layouts/Layout.astro";
 
 import samke from "../../public/images/samke.png";
-import X from "../components/icons/X.astro";
-import Deviantart from "../components/icons/Deviantart.astro";
-import Linkedin from "../components/icons/Linkedin.astro";
-import Npm from "../components/icons/Npm.astro";
-import Github from "../components/icons/Github.astro";
-import LinkCard from "../components/LinkCard.astro";
+import samirikerim from "../../public/images/samirikerim.png";
+
 import Button from "../components/Button.astro";
-import InFocus from "../components/InFocus.astro";
+import FollowMeCard from "../components/FollowMeCard.astro";
+import Marquee from "../components/Marquee.astro";
+import Footer from "../components/Footer.astro";
+import Download from "../components/icons/Download.astro";
+import Mail from "../components/icons/Mail.astro";
 ---
 
 <Layout title="Samir Kahvedzic - Senior Software Developer - Profile">
@@ -22,82 +22,130 @@ import InFocus from "../components/InFocus.astro";
     id="intro"
     class="pt-44 grid grid-cols-1 xl:grid-cols-2 container px-6 xl:px-0 mx-auto"
   >
-    <Image width="865" height="810" src={samke} alt="profile" loading="eager" />
+    <div class="glow">
+      <Image
+        width="865"
+        height="810"
+        src={samke}
+        alt="profile"
+        loading="eager"
+      />
+    </div>
     <div>
-      <div class="mb-12">
-        <h1 class="text-gradient text-center">Samir</h1>
-        <h4 class="text-fg text-center text-xl tracking-widest">
-          KAHVEDZIC / SKADIZZ
-        </h4>
+      <div class="mb-12 relative z-10">
+        <div class="overhead">HELLO</div>
+        <h1 class="text-gradient">I'm SAMIR<br /> KAHVEDZIC</h1>
+        <p class="lead">Senior Software Developer</p>
       </div>
-      <div class="grid grid-cols-5 xl:grid-cols-7 gap-2 xl:gap-5 mb-5">
-        <div class="col-span-full xl:col-span-2">
-          <Card>
-            <div class="py-6 fadeout-horizontal w-full overflow-hidden flex h-full">
-              <div class="marquee-text">
-                <div class="marquee-text-track">
-                  <p>JavaScript</p>
-                  <p>TypeScript</p>
-                  <p>CSS</p>
-                  <p>TailwindCSS</p>
-                  <p>Accessibility</p>
-                  <p>React</p>
-                  <p>Angular</p>
-                  <p aria-hidden="true">JavaScript</p>
-                  <p aria-hidden="true">TypeScript</p>
-                  <p aria-hidden="true">CSS</p>
-                  <p aria-hidden="true">TailwindCSS</p>
-                  <p aria-hidden="true">Accessibility</p>
-                  <p aria-hidden="true">React</p>
-                  <p aria-hidden="true">Angular</p>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
-        <LinkCard href="https://github.com/SKaDiZZ" title="GitHub">
-          <div class="aspect-square flex items-center justify-center">
-            <Github classNames="xl:w-12 xl:h-12" />
-          </div>
-        </LinkCard>
-        <LinkCard
-          href="https://www.deviantart.com/samirkahvedzic"
-          title="DeviantArt"
-        >
-          <div class="aspect-square flex items-center justify-center">
-            <Deviantart classNames="xl:w-12 xl:h-12" />
-          </div>
-        </LinkCard>
-        <LinkCard
-          href="https://www.linkedin.com/in/samir-kahvedzic-96265594"
-          title="LinkedIn"
-        >
-          <div class="aspect-square flex items-center justify-center">
-            <Linkedin classNames="xl:w-12 xl:h-12" />
-          </div>
-        </LinkCard>
-        <LinkCard href="https://www.npmjs.com/~skadizz" title="NPM">
-          <div class="aspect-square flex items-center justify-center">
-            <Npm classNames="xl:w-12 xl:h-12" />
-          </div>
-        </LinkCard>
-        <LinkCard href="https://twitter.com/SKaDiZZ" title="X">
-          <div class="aspect-square flex items-center justify-center">
-            <X classNames="xl:w-12 xl:h-12" />
-          </div>
-        </LinkCard>
+      <Card slick>
+        <Marquee
+          text={[
+            "JavaScript",
+            "TypeScript",
+            "CSS",
+            "TailwindCSS",
+            "Accessibility",
+            "React",
+            "Angular",
+          ]}
+        />
+      </Card>
+      <div class="mt-6 flex items-center space-x-6 px-6">
+        <Button>
+          <Mail slot="icon" />
+          Contact
+        </Button>
+        <Button>
+          <Download slot="icon" />
+          Download CV
+        </Button>
       </div>
+    </div>
+  </section>
+
+  <section class="-mt-12">
+    <div class="container mx-auto">
+      <FollowMeCard />
+    </div>
+    <div class="section-head col-span-full">
+      <div class="flex flex-col items-center">
+        <div class="overhead">CURRENT ROLE</div>
+        <h2>Frontend Tech Lead at OVRLAY Labs</h2>
+      </div>
+    </div>
+    <div class="container mx-auto">
       <Card>
-        <p class="p-6">
-          Welcome to my online profile. Learn about me, my projects, experience,
-          contact me.
-          <Button>Hello</Button>
-        </p>
-        <InFocus>
-          <X classNames="w-6 h-6" />
-        </InFocus>
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-12">
+          <div>
+            <div class="overhead">CURRENT WORK</div>
+            <h2>Currently working on</h2>
+            <p class="lead">
+              Currently I’m working full time for WeOwn Market as frontend tech
+              lead. I lead development of multiple web and mobile applications
+              built on top of WeOwn Blockchain.
+            </p>
+          </div>
+          <div>
+            <div class="overhead">CURRENT WORK</div>
+            <h2>Currently working on</h2>
+            <p class="lead">
+              Currently I’m working full time for WeOwn Market as frontend tech
+              lead. I lead development of multiple web and mobile applications
+              built on top of WeOwn Blockchain.
+            </p>
+          </div>
+          <div>
+            <div class="overhead">FREE TIME</div>
+            <h2>When I have time</h2>
+            <p class="lead">
+              In my free time I’m working on my own projects, developing some of
+              my ideas into full fledged products. Helping young people to learn
+              coding by writing tutorials and promoting importance of coding in
+              my comunity.
+            </p>
+            <p class="lead">
+              I’m helping others in their work by releasing useful NPM packages
+              and libraries.
+            </p>
+          </div>
+        </div>
       </Card>
     </div>
+  </section>
+
+  <section>
+    <div class="section-head-2">
+      <div class="container mx-auto flex relative">
+        <h2>How I grew as a developer ?</h2>
+        <div class="absolute w-96 -top-28 left-1/2">
+          <Image
+            src={samirikerim}
+            class="absolute blur-xl saturate-0 opacity-30"
+            alt="profile"
+            loading="lazy"
+            width="865"
+            height="810"
+          />
+          <Image
+            src={samirikerim}
+            class="absolute blur-sm saturate-0 opacity-30"
+            alt="profile"
+            loading="lazy"
+            width="865"
+            height="810"
+          />
+          <Image
+            src={samirikerim}
+            class="absolute saturate-0 opacity-50"
+            alt="profile"
+            loading="lazy"
+            width="865"
+            height="810"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="section-learn"></div>
   </section>
 
   <section id="projects">
@@ -123,10 +171,9 @@ import InFocus from "../components/InFocus.astro";
       contact me.
     </p>
   </section>
+  <Footer />
 </Layout>
-
 <style>
-
   .astro-a {
     position: absolute;
     top: -32px;
@@ -137,6 +184,26 @@ import InFocus from "../components/InFocus.astro";
     z-index: -1;
   }
 
+  .glow {
+    @apply relative;
+  }
+
+  .glow img {
+    z-index: 2;
+    @apply relative;
+  }
+
+  .glow:after {
+    content: "";
+    position: absolute;
+    top: -250px;
+    left: calc(50% - 400px);
+    width: 520px;
+    height: 520px;
+    background: rgba(25, 89, 173, 1);
+    filter: blur(200px);
+    transform: translateZ(0);
+  }
 
   .instructions {
     margin-bottom: 2rem;
@@ -168,35 +235,5 @@ import InFocus from "../components/InFocus.astro";
   }
   section {
     @apply min-h-screen;
-  }
-
-  .fadeout-horizontal {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black var(--fade-size, 5rem),
-    black calc(100% - var(--fade-size, 5rem)),
-    transparent
-  );
-}
-  .marquee-text {
-    overflow: clip;
-  }
-
-  .marquee-text-track {
-    display: flex;
-    gap: 1.5rem;
-    animation: marquee-move-text var(--speed, 10s) linear infinite
-      var(--direction, forwards);
-  }
-
-  .marquee-text p {
-    padding: 0;
-  }
-
-  @keyframes marquee-move-text {
-    to {
-      transform: translateX(-50%);
-    }
   }
 </style>

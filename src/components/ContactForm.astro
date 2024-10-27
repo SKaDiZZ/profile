@@ -1,0 +1,62 @@
+---
+import Button from "./Button.astro";
+---
+
+<form id="contact-form" method="POST" class="flex flex-col gap-4 items-start">
+  <input type="text" name="name" placeholder="Your name" />
+  <input type="email" name="email" placeholder="Your email" />
+  <input type="text" name="subject" placeholder="Subject" />
+  <textarea name="message" placeholder="Your message"></textarea>
+  <Button type="submit" class="inline-block">Send</Button>
+</form>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+    console.log(name, email, subject, message);
+  });
+</script>
+
+<style>
+  input,
+  textarea {
+    width: 100%;
+    height: 84px;
+    padding: 0 30px;
+    background: rgba(8, 13, 39, 0.5);
+    border: 2px solid rgba(25, 89, 173, 0.25);
+    border-radius: 24px;
+    font-family: var(--font-poppins);
+    font-size: 16px;
+    font-weight: 500;
+    color: #c4cbf5;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    transition: border-color 0.4s;
+  }
+  input:focus,
+  input:hover,
+  textarea:focus,
+  textarea:hover {
+    border-color: rgba(25, 89, 173, 0.5);
+    @apply outline-none;
+  }
+  input:before,
+  textarea:before {
+    inset: 5px;
+    border: 2px solid #080d27;
+    border-radius: 20px;
+    pointer-events: none;
+  }
+  textarea {
+    padding: 30px;
+    min-height: 84px;
+    height: auto;
+  }
+</style>

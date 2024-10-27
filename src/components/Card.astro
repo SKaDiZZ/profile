@@ -1,27 +1,57 @@
 ---
 type CardProps = {
-	variant?: 'base' | 'selected';
-}
+  variant?: "base" | "inset" | "featured";
+  slick?: boolean;
+};
 
-const { variant, ...rest }: CardProps = Astro.props;
+const { variant = "base", slick = false, ...rest }: CardProps = Astro.props;
 ---
 
-<div class={`card ${variant === 'selected' ? 'selected' : ''}`} {...rest}>
-    <slot />
+<div
+  class={`card ${variant !== "base" ? variant : ""} ${slick ? "slick" : ""}`}
+  {...rest}
+>
+  <slot />
 </div>
 
 <style>
-	.card {
-		flex: 1 0 300px;
-        margin: 0 8px;
-        padding: 22px;
-        background: linear-gradient(#1b275a, #0e1434);
-        border: 2px solid #334679;
-        border-radius: 24px;
-	}
-	.card.selected {
-		background: #080d27;
-	}
+  .card {
+    flex: 1 0 300px;
+    margin: 0 8px;
+    padding: 22px;
+    position: relative;
+    background: linear-gradient(#1b275a, #0e1434);
+    border: 2px solid #334679;
+    border-radius: 24px;
+    @apply rounded-[22px] xl:rounded-[40px] p-[22px] xl:p-[60px];
+  }
+  .card.inset {
+    background: #080d27;
+  }
 
+  .card.featured {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding: 0 5%;
+    background: linear-gradient(#080d27, transparent);
+    border: 2px solid #334679;
+    border-radius: 40px;
+    @apply rounded-[22px] xl:rounded-[40px];
+  }
+
+  .card.featured:before {
+    content: "";
+    position: absolute;
+    top: 106px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #0c1838;
+  }
+
+  .card.slick {
+    @apply p-[22px] xl:p-[22px];
+  }
 </style>
-                                                                        

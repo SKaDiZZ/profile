@@ -1,111 +1,136 @@
 ---
-
+const { ...rest } = Astro.props;
 ---
 
-<button class="button">
-    <span class="button_inner">
-        <span class="button_title">
-            <slot />
+<button class="button" {...rest}>
+  <span class="button_inner">
+    {
+      Astro.slots.has("icon") && (
+        <span class="button_icon">
+          <slot name="icon" />
         </span>
+      )
+    }
+    <span class="button_title">
+      <slot />
     </span>
-    <span class="button_glows"></span>
+  </span>
+  <span class="button_glows"></span>
 </button>
 
 <style>
-	.button {
-		padding: 2px;
-        background: linear-gradient(#334679, #162561);
-        border-radius: 16px;
-        box-shadow: 0 16px 24px rgba(0, 0, 0, .25), 0 -14px 48px rgba(40, 51, 111, .7);
-	}
+  .button {
+    padding: 2px;
+    background: linear-gradient(#334679, #162561);
+    border-radius: 16px;
+    box-shadow:
+      0 16px 24px rgba(0, 0, 0, 0.25),
+      0 -14px 48px rgba(40, 51, 111, 0.7);
+  }
 
-    .button_inner {
-        display: flex;
-        align-items: center;
-        height: 60px;
-        padding: 0 18px;
-        background: linear-gradient(#253575, #162561);
-        border-radius: 14px;
-    }
+  .button_inner {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 18px;
+    background: linear-gradient(#253575, #162561);
+    border-radius: 14px;
+  }
 
-    .button, .button_inner {
-        position: relative;
-        overflow: hidden;
-    }
+  .button_icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin: 0 20px 0 -9px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42'%3E%3Cpath fill='%232ef2ff' fill-rule='evenodd' d='M31 2H11a8.96 8.96 0 0 0-5.618 1.968l9.289 9.289A9.96 9.96 0 0 1 21 11a9.96 9.96 0 0 1 6.329 2.257l9.289-9.289A8.96 8.96 0 0 0 31 2zm-5.094 12.68C24.551 13.627 22.849 13 21 13s-3.551.627-4.906 1.68L21 19.586l4.906-4.906zm-12.649-.009L3.968 5.382A8.96 8.96 0 0 0 2 11v20a8.96 8.96 0 0 0 1.968 5.618l9.289-9.289A9.96 9.96 0 0 1 11 21a9.96 9.96 0 0 1 2.257-6.329zm1.423 11.234C13.627 24.551 13 22.849 13 21s.627-3.551 1.68-4.906L19.586 21l-4.906 4.906zm-.009 2.837l-9.289 9.289A8.96 8.96 0 0 0 11 40h20a8.96 8.96 0 0 0 5.618-1.968l-9.289-9.289A9.96 9.96 0 0 1 21 31a9.96 9.96 0 0 1-6.329-2.257zm11.234-1.423C24.551 28.373 22.849 29 21 29s-3.551-.627-4.906-1.68L21 22.414l4.906 4.906zm1.414-1.414L22.414 21l4.906-4.906C28.373 17.449 29 19.151 29 21s-.627 3.551-1.68 4.906zm1.423 1.423A9.96 9.96 0 0 0 31 21a9.96 9.96 0 0 0-2.257-6.329l9.289-9.289A8.96 8.96 0 0 1 40 11v20a8.96 8.96 0 0 1-1.968 5.618l-9.289-9.289zM11 0C4.925 0 0 4.925 0 11v20c0 6.075 4.925 11 11 11h20c6.075 0 11-4.925 11-11V11c0-6.075-4.925-11-11-11H11z' opacity='.05'/%3E%3C/svg%3E");
+  }
 
-    .button:before, .button_inner:before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        transition: opacity .4s;
-    }
+  .button,
+  .button_inner {
+    position: relative;
+    overflow: hidden;
+  }
 
-    .button:before {
-        background: linear-gradient(#253575, #162561);
-    }
+  .button:before,
+  .button_inner:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
 
-    .button:after {
-        content: "";
-        position: absolute;
-        top: calc(50% - 11px);
-        left: 0;
-        width: 8px;
-        height: 22px;
-    }
+  .button:before {
+    background: linear-gradient(#253575, #162561);
+  }
 
-    .button_inner:before {
-        background: linear-gradient(#1b275a, #0e1434);
-    }
+  .button:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 11px);
+    left: 0;
+    width: 8px;
+    height: 22px;
+  }
 
-    .button_title {
-        position: relative;
-        z-index: 2;
-        font-family: var(--font-poppins);
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 24px;
-        color: #ffffff;
-        text-transform: uppercase;
-    }
+  .button_inner:before {
+    background: linear-gradient(#1b275a, #0e1434);
+  }
 
-    .button_glows:after, .button_glows:before {
-        content: "";
-        position: absolute;
-        z-index: 4;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #2ef2ff, transparent);
-        opacity: 0;
-        transition: left .4s, opacity .4s;
-    }
+  .button_title {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-poppins);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
 
-    .button_glows:before {
-        top: 0;
-        left: calc(40% - 16px);
-        width: 60%;
-    }
+  .button_glows:after,
+  .button_glows:before {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2ef2ff, transparent);
+    opacity: 0;
+    transition:
+      left 0.4s,
+      opacity 0.4s;
+  }
 
-    .button_glows:after {
-        bottom: 0;
-        left: 16px;
-        width: 34%;
-    }
+  .button_glows:before {
+    top: 0;
+    left: calc(40% - 16px);
+    width: 60%;
+  }
 
+  .button_glows:after {
+    bottom: 0;
+    left: 16px;
+    width: 34%;
+  }
 
-    .button:hover .button_glows:before {
-        left: 16px;
-    }
+  .button:hover .button_glows:before {
+    left: 16px;
+  }
 
-    .button:hover .button_glows:after {
-        left: calc(66% - 16px);
-    }
+  .button:hover .button_glows:after {
+    left: calc(66% - 16px);
+  }
 
-    .button:hover .button_glows:before {
-        opacity: .4;
-    }
+  .button:hover .button_glows:before {
+    opacity: 0.4;
+  }
 
-    .button:hover .button_inner:before, .button:hover:before {
-        opacity: 1;
-    }
-
+  .button:hover .button_inner:before,
+  .button:hover:before {
+    opacity: 1;
+  }
 </style>

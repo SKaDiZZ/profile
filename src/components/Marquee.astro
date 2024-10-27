@@ -1,0 +1,48 @@
+---
+type MarqueeProps = {
+  text?: string[];
+};
+
+const { text = [] }: MarqueeProps = Astro.props;
+---
+
+<div class="py-6 fadeout-horizontal w-full overflow-hidden flex h-full">
+  <div class="marquee-text">
+    <div class="marquee-text-track">
+      {text.map((t: string) => <p>{t}</p>)}
+      {text.map((t: string) => <p aria-hidden="true">{t}</p>)}
+    </div>
+  </div>
+</div>
+
+<style>
+  .fadeout-horizontal {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black var(--fade-size, 5rem),
+      black calc(100% - var(--fade-size, 5rem)),
+      transparent
+    );
+  }
+  .marquee-text {
+    overflow: clip;
+  }
+
+  .marquee-text-track {
+    display: flex;
+    gap: 1.5rem;
+    animation: marquee-move-text var(--speed, 10s) linear infinite
+      var(--direction, forwards);
+  }
+
+  .marquee-text p {
+    padding: 0;
+  }
+
+  @keyframes marquee-move-text {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>

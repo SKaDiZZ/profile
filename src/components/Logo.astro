@@ -1,0 +1,33 @@
+---
+type LogoProps = {
+  className?: string;
+  classNameS?: string;
+  classNameK?: string;
+};
+
+const { className = "w-10 h-10", classNameS, classNameK } = Astro.props;
+---
+
+<svg
+  version="1.1"
+  id="logo-sk"
+  class={className}
+  viewBox="0 0 127.79743 100.1586"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs id="defs1"></defs>
+  <g id="g1" transform="translate(-249.70964,-332.57748)">
+    <path
+      class={classNameS}
+      style="stroke-width:0.592254"
+      fill="currentColor"
+      d="m 342.76744,332.84045 h 31.40105 l -39.20931,47.5011 42.54789,52.39453 h -35.48184 l -40.32427,-50.96092 z"
+      id="logo-s"></path>
+    <path
+      class={classNameK}
+      style="stroke-width:0.592254"
+      fill="currentColor"
+      d="m 285.77586,362.30597 13.61847,15.68612 39.2448,-45.41461 -26.53618,0.15408 h -33.3359 l -27.28013,32.85562 26.47648,31.89679 -28.25376,34.92123 h 32.86614 l 26.38333,-33.64258 -26.5435,-32.72166 z"
+      id="logo-k"></path>
+  </g>
+</svg>
