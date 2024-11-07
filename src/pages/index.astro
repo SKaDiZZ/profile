@@ -1,4 +1,6 @@
 ---
+import "@/styles/globals.css";
+
 import { Image } from "astro:assets";
 import Card from "../components/Card.astro";
 import Nav from "../components/Nav.astro";
@@ -6,6 +8,7 @@ import Layout from "../layouts/Layout.astro";
 
 import samke from "../../public/images/samke.png";
 import samirikerim from "../../public/images/samirikerim.png";
+import team from "../../public/images/team.png";
 
 import Button from "../components/Button.astro";
 import FollowMeCard from "../components/FollowMeCard.astro";
@@ -13,15 +16,71 @@ import Marquee from "../components/Marquee.astro";
 import Footer from "../components/Footer.astro";
 import Download from "../components/icons/Download.astro";
 import Mail from "../components/icons/Mail.astro";
+
+import Particles from "@/components/ui/particles";
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import {
+  BellIcon,
+  Calendar,
+  FileTextIcon,
+  FormInputIcon,
+  Globe,
+} from "lucide-react";
+
+const features = [
+  {
+    Icon: FileTextIcon,
+    name: "Save your files",
+    description: "We automatically save your files as you type.",
+    href: "/",
+    cta: "Learn more",
+    background: "bg-slate-100",
+    className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+  },
+  {
+    Icon: FormInputIcon,
+    name: "Full text search",
+    description: "Search through all your files in one place.",
+    href: "/",
+    cta: "Learn more",
+    background: "bg-slate-100",
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+  },
+  {
+    Icon: Globe,
+    name: "Multilingual",
+    description: "Supports 100+ languages and counting.",
+    href: "/",
+    cta: "Learn more",
+    background: "bg-slate-100",
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+  },
+  {
+    Icon: Calendar,
+    name: "Calendar",
+    description: "Use the calendar to filter your files by date.",
+    href: "/",
+    cta: "Learn more",
+    background: "bg-slate-100",
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+  },
+  {
+    Icon: BellIcon,
+    name: "Notifications",
+    description:
+      "Get notified when someone shares a file or mentions you in a comment.",
+    href: "/",
+    cta: "Learn more",
+    background: "bg-slate-100",
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+  },
+];
 ---
 
 <Layout title="Samir Kahvedzic - Senior Software Developer - Profile">
   <Nav />
 
-  <section
-    id="intro"
-    class="pt-44 grid grid-cols-1 xl:grid-cols-2 container px-6 xl:px-0 mx-auto"
-  >
+  <section id="intro" class="pt-44 grid grid-cols-1 xl:grid-cols-2 container">
     <div class="glow">
       <Image
         width="865"
@@ -67,7 +126,10 @@ import Mail from "../components/icons/Mail.astro";
     <div class="container mx-auto">
       <FollowMeCard />
     </div>
-    <div class="section-head col-span-full">
+    <div class="section-head col-span-full relative">
+      <div class="absolute w-full h-full">
+        <Particles client:load />
+      </div>
       <div class="flex flex-col items-center">
         <div class="overhead">CURRENT ROLE</div>
         <h2>Frontend Tech Lead at OVRLAY Labs</h2>
@@ -86,6 +148,15 @@ import Mail from "../components/icons/Mail.astro";
             </p>
           </div>
           <div>
+            <div class="relative w-62">
+              <Image
+                src={team}
+                alt="profile"
+                loading="lazy"
+                width="865"
+                height="931"
+              />
+            </div>
             <div class="overhead">CURRENT WORK</div>
             <h2>Currently working on</h2>
             <p class="lead">
@@ -95,6 +166,15 @@ import Mail from "../components/icons/Mail.astro";
             </p>
           </div>
           <div>
+            <div class="relative w-96">
+              <Image
+                src={samirikerim}
+                alt="profile"
+                loading="lazy"
+                width="865"
+                height="810"
+              />
+            </div>
             <div class="overhead">FREE TIME</div>
             <h2>When I have time</h2>
             <p class="lead">
@@ -114,35 +194,17 @@ import Mail from "../components/icons/Mail.astro";
   </section>
 
   <section>
+    <div class="container mx-auto">
+      <BentoGrid client:load className="lg:grid-rows-3">
+        {features.map((feature) => <BentoCard {...feature} />)}
+      </BentoGrid>
+    </div>
+  </section>
+
+  <section>
     <div class="section-head-2">
       <div class="container mx-auto flex relative">
         <h2>How I grew as a developer ?</h2>
-        <div class="absolute w-96 -top-28 left-1/2">
-          <Image
-            src={samirikerim}
-            class="absolute blur-xl saturate-0 opacity-30"
-            alt="profile"
-            loading="lazy"
-            width="865"
-            height="810"
-          />
-          <Image
-            src={samirikerim}
-            class="absolute blur-sm saturate-0 opacity-30"
-            alt="profile"
-            loading="lazy"
-            width="865"
-            height="810"
-          />
-          <Image
-            src={samirikerim}
-            class="absolute saturate-0 opacity-50"
-            alt="profile"
-            loading="lazy"
-            width="865"
-            height="810"
-          />
-        </div>
       </div>
     </div>
     <div class="section-learn"></div>
@@ -232,8 +294,5 @@ import Mail from "../components/icons/Mail.astro";
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
     padding: 0;
-  }
-  section {
-    @apply min-h-screen;
   }
 </style>

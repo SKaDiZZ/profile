@@ -56,15 +56,15 @@ const links = [
     width: 100%;
     padding: 40px 0;
     transition: all 0.4s;
+    @apply fixed top-0 left-0 z-50 w-full py-[8px] xl:py-[40px];
   }
 
   header.scrolled {
-    padding: 8px 0;
     background: rgba(5, 9, 29, 0.95);
-    backdrop-filter: blur(8px);
+    @apply xl:py-2 backdrop-blur;
   }
   nav {
-    @apply relative container mx-auto h-[56px] text-white flex justify-center;
+    @apply relative container h-[88px] xl:h-[56px] text-white flex justify-center;
   }
   ul {
     @apply flex items-center relative justify-between w-full;
@@ -74,7 +74,7 @@ const links = [
   }
   li a {
     line-height: 24px;
-    @apply relative text-base font-heading font-[700] text-[#eaedff] uppercase transition-colors duration-[400ms] cursor-pointer;
+    @apply relative text-base font-heading font-[700] text-[#eaedff] uppercase transition-colors duration-300 cursor-pointer;
   }
   li a.logo {
     @apply flex items-center gap-2 text-[2.6rem] transition-transform duration-300 ease-in-out;
@@ -95,7 +95,7 @@ const links = [
     @apply text-brand;
   }
   #nav-indicator {
-    @apply absolute left-[13px] top-10 h-1 w-full bg-[#334679] transition-all duration-300 ease-in-out;
+    @apply absolute left-[13px] top-10 h-1 w-full bg-[#334679] transition-all duration-300 ease-in-out hidden xl:block;
   }
 </style>
 

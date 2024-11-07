@@ -1,5 +1,6 @@
 ---
 import ContactForm from "./ContactForm.astro";
+import Logo from "./Logo.astro";
 
 const links = [
   {
@@ -28,6 +29,12 @@ const links = [
 <footer>
   <div class="container mx-auto flex flex-col xl:flex-row px-6 xl:px-0">
     <div class="link-col flex flex-col justify-between">
+      <div class="footer-logo">
+        <Logo />
+        <div class="footer-bg-logo">
+          <Logo className="w-[592px] h-[592px] text-[#253575]" />
+        </div>
+      </div>
       <nav>
         <ul>
           {
@@ -45,6 +52,10 @@ const links = [
     </div>
     <div class="contact-col">
       <h2>Contact me</h2>
+      <p class="mb-12">
+        Feel free to contact me, ask for more information about me and my work
+        or let’s colaborate on different projects. Lets code together.
+      </p>
       <ContactForm />
     </div>
   </div>
@@ -57,6 +68,23 @@ const links = [
   footer:before {
     background: rgba(25, 89, 173, 0.5);
     @apply content-[""] absolute left-0 xl:left-[-160px] bottom-[-160px] w-[320px] h-[320px] filter blur-[200px] transform translate-x-0;
+  }
+  .footer-logo {
+    position: absolute;
+    top: -14px;
+    right: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #080d27;
+    border: 2px solid #0c1838;
+    border-radius: 50%;
+  }
+
+  .footer-bg-logo {
+    @apply absolute top-1/2 left-1/2 w-[592px] h-[592px] transform -translate-x-1/2 -translate-y-1/2 opacity-10 z-[-1];
   }
 
   .link-col {
