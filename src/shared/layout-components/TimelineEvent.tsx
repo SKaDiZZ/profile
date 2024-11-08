@@ -8,7 +8,7 @@ const TimelineEvent = ({
   image = null,
 }: any) => {
   const leftBullet = (
-    <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+    <div className="col-start-5 col-end-6 md:mx-auto relative mr-10 opacity-50">
       <div className="h-full w-6 flex items-center justify-center">
         <div className="h-full w-[1px] bg-border pointer-events-none"></div>
       </div>
@@ -22,7 +22,7 @@ const TimelineEvent = ({
   );
 
   const rightBullet = (
-    <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+    <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative opacity-50">
       <div className="h-full w-6 flex items-center justify-center">
         <div className="h-full w-[1px] bg-border pointer-events-none"></div>
       </div>

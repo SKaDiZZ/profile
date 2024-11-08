@@ -24,6 +24,7 @@ const Timeline = () => {
         {eventList.map((event: any) => (
           <TimelineEvent key={event.id} {...event} />
         ))}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-main-bg"></div>
       </div>
     </section>
   );
