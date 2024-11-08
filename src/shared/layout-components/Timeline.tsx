@@ -13,7 +13,7 @@ const Timeline = () => {
         Short timeline of my life journey
       </h2>
       <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
-        {eventList.map((event) => (
+        {eventList.map((event: any) => (
           <TimelineEvent key={event.id} {...event} />
         ))}
       </div>
