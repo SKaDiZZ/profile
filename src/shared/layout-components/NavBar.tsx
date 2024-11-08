@@ -5,6 +5,34 @@ const NavBar = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  const menuItems = [
+    {
+      name: "Home",
+      link: "home",
+      offset: -180,
+    },
+    {
+      name: "What I do?",
+      link: "what-i-do",
+      offset: -120,
+    },
+    {
+      name: "About Me",
+      link: "about-me",
+      offset: -120,
+    },
+    {
+      name: "Projects",
+      link: "projects",
+      offset: -120,
+    },
+    {
+      name: "Contact",
+      link: "contact",
+      offset: -215,
+    },
+  ];
+
   const userScrolled = () => {
     setHasScrolled(true);
   };
@@ -27,95 +55,33 @@ const NavBar = () => {
   };
 
   return (
-    <header
-      className={
-        "my-0 md:my-10 sticky top-0 z-10  " + (hasScrolled ? "bg-main-bg" : "")
-      }
-    >
-      <div className="h-24 main-container flex justify-between items-center relative">
+    <header className="sticky top-0 z-50 w-full border-b bg-main-bg/95 backdrop-blur supports-[backdrop-filter]:bg-main-bg/60 dark:border-border">
+      <div className="flex h-14 items-center justify-between px-4">
         <div>
-          <h3 className="font-logo text-5xl text-white">
+          <h3 className="font-logo text-4xl text-white">
             <span className="text-main-brand">S</span>amir
           </h3>
-          <h4 className="text-xs tracking-widest">
-            <span className="text-white">KAHVEDZIC</span>/SKADIZZ
-          </h4>
         </div>
-        <nav className={open ? "open" : ""}>
+        <nav
+          className={`flex items-center gap-4 text-sm xl:gap-6 ${
+            open ? "open" : ""
+          }`}
+        >
           <ul className="main-nav">
-            <li>
-              <Link
-                to="home"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-180}
-                onSetActive={userBackToTop}
-                onSetInactive={userScrolled}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="what-i-do"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-120}
-                onSetActive={onSetActive}
-              >
-                What I do?
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="about-me"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-120}
-                onSetActive={onSetActive}
-              >
-                About Me
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="projects"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-120}
-                onSetActive={onSetActive}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="timeline"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-120}
-                onSetActive={onSetActive}
-              >
-                Experience
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact-me"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-215}
-                onSetActive={onSetActive}
-              >
-                Contact Me
-              </Link>
-            </li>
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.link}
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={item.offset}
+                  onSetActive={onSetActive}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <div

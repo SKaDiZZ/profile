@@ -17,7 +17,7 @@ import Timeline from "../../shared/layout-components/Timeline";
 const Home = () => {
   return (
     <div>
-      <div id="home" className="sm:flex items-center mt-12 md:mt-0">
+      <div id="home" className="sm:flex items-center md:mt-0">
         <div className="w-full sm:w-1/2">
           <h3 className="text-2xl font-bold text-main-brand flex items-center mb-6">
             <StrokeIcon />

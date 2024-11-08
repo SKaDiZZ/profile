@@ -1,6 +1,5 @@
 #root {
-  max-width: 1280px;
-  @apply mx-auto p-0 md:p-8 text-center;
+  @apply container max-w-[1024px] mx-auto text-center;
 }
 
 .card {

@@ -1,27 +1,32 @@
-import StrokeIcon from "../icon-components/StrokeIcon";
 import ProjectCard from "./ProjectCard";
 import projectList from "../data/project-list";
+import bg from "../../assets/images/circle.svg";
 
 const Projects = () => (
-  <div
-    id="projects"
-    className="grid grid-cols-1 sm:grid-cols-3 sm:gap-12 my-12 w-full"
-  >
+  <section id="projects">
+    <div className="section-header">
+      <h4 className="section-subtitle">Projects</h4>
+      <h2>Some of my recent projects</h2>
+      <div className="section-header-bg">
+        <img
+          alt="Outlines"
+          loading="lazy"
+          width="960"
+          height="380"
+          decoding="async"
+          className="relative z-[2]"
+          src={bg}
+        />
+      </div>
+    </div>
     <div className="col-span-3">
-      <h4 className="text-xl font-bold text-main-brand flex items-center mb-6">
-        <StrokeIcon />
-        Projects
-      </h4>
-      <h2 className="text-4xl font-bold text-white mb-12">
-        Some of my recent projects
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
+      <div className="columns-[300px] gap-6">
         {projectList.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Projects;
