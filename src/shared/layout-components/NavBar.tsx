@@ -7,7 +7,7 @@ const NavBar = () => {
 
   const menuItems = [
     {
-      name: "Home",
+      name: "Intro",
       link: "home",
       offset: -180,
     },

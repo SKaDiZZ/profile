@@ -1,6 +1,7 @@
 import { MagicCard } from "@/components/ui/magic-card";
 
 const TimelineEvent = ({
+  index,
   position,
   timespan,
   title,
@@ -10,13 +11,19 @@ const TimelineEvent = ({
   const leftBullet = (
     <div className="col-start-5 col-end-6 md:mx-auto relative mr-10 opacity-50">
       <div className="h-full w-6 flex items-center justify-center">
-        <div className="h-full w-[1px] bg-border pointer-events-none"></div>
+        <div
+          className={`h-full pointer-events-none w-[1px] ${
+            index === 0
+              ? "bg-gradient-to-b from-transparent to-border"
+              : "bg-border"
+          }`}
+        ></div>
       </div>
 
       <div className="w-12 h-12 absolute -left-1/2 top-1/2 -mt-3 rounded-full border flex items-center justify-center animate-ping"></div>
       <div className="absolute top-1/2 w-6 h-6 rounded-full border flex items-center justify-center z-10">
         <div className="w-2 h-2 rounded-full border bg-background/5 backdrop-blur-xl"></div>
-        <div className="w-10 h-[1px] absolute right-6 bottom-1/2 -mt-3 rounded-full border flex items-center justify-center"></div>
+        <div className="w-10 h-[1px] absolute -right-10 md:right-6 bottom-1/2 -mt-3 rounded-full border flex items-center justify-center"></div>
       </div>
     </div>
   );
@@ -24,7 +31,13 @@ const TimelineEvent = ({
   const rightBullet = (
     <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative opacity-50">
       <div className="h-full w-6 flex items-center justify-center">
-        <div className="h-full w-[1px] bg-border pointer-events-none"></div>
+        <div
+          className={`h-full pointer-events-none w-[1px] ${
+            index === 0
+              ? "bg-gradient-to-b from-transparent to-border"
+              : "bg-border"
+          }`}
+        ></div>
       </div>
       <div className="w-12 h-12 absolute -left-1/2 top-1/2 -mt-3 rounded-full border flex items-center justify-center animate-ping "></div>
       <div className="absolute top-1/2 w-6 h-6 rounded-full border flex items-center justify-center">
