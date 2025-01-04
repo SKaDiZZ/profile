@@ -68,7 +68,7 @@ const ContactForm = () => {
             required
           />
         </div>
-        <div className="form-input col-span-2">
+        <div className="col-span-2">
           <textarea
             id="message"
             name="message"
@@ -78,7 +78,7 @@ const ContactForm = () => {
             required
           ></textarea>
         </div>
-        <SkButton type="submit">Send Message</SkButton>
+        <SkButton>Send Message</SkButton>
       </div>
     </form>
   );

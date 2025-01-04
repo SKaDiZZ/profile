@@ -55,8 +55,8 @@ const NavBar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-main-bg/95 backdrop-blur supports-[backdrop-filter]:bg-main-bg/60 dark:border-border">
-      <div className="flex h-14 items-center justify-between px-4">
+    <header className="sticky top-0 md:top-6 z-50 w-full border border-opacity-25 rounded-full bg-main-bg/95 backdrop-blur supports-[backdrop-filter]:bg-main-bg/60">
+      <div className="flex h-14 items-center justify-between px-6">
         <div>
           <h3 className="font-logo text-4xl text-white">
             <span className="text-main-brand">S</span>amir

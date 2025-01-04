@@ -8,13 +8,22 @@ import sarajevo from "../../assets/images/sarajevo.png";
 
 const eventList = [
   {
+    id: 0,
+    position: "right",
+    timespan: "2024 - NOW",
+    title:
+      "OVRLAY, Munchen, Germany, Sarajevo office (full time) — Frontend Tech Lead",
+    description:
+      "Currenly leading development of OVRLAY web and mobile applications. Creating immersive AR/VR experiences.",
+  },
+  {
     id: 1,
     position: "left",
-    timespan: "2019 - NOW",
+    timespan: "2019 - 2024",
     title:
       "WeOwn AG, Munchen, Germany, Sarajevo office (full time) — Frontend Tech Lead",
     description:
-      "Currenly leading development of WeOwn web and mobile applications working on top of WeOwn Blockchain.",
+      "Lead development of WeOwn web and mobile applications working on top of WeOwn Blockchain.",
   },
   {
     id: 2,

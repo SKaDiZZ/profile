@@ -13,12 +13,39 @@
   --font-logo: "Suez One", serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #080d27;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 100%, 0.3);
+  border-radius: 0;
+  border: 1px solid #080d27;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html,
+body {
+  @apply overflow-x-clip;
+}
+
 body {
   @apply bg-main-bg text-main-fg bg-fixed font-main;
 }
 
 .main-container {
-  @apply container mx-auto max-w-screen-lg px-6 overflow-x-hidden xl:overflow-x-visible;
+  @apply container mx-auto max-w-screen-lg px-6 overflow-x-clip md:overflow-x-visible;
 }
 
 nav {
@@ -86,18 +113,19 @@ nav.open {
 .section-subheader::after {
   left: calc(50% - 160px);
   filter: blur(200px);
-  @apply content-[''] absolute top-[160px] w-[320px] h-[320px] bg-[#1959ad];
+  @apply content-[''] absolute top-[250px] w-[320px] h-[320px] bg-[#1959ad];
 }
 
 .section-subheader h2 {
-  @apply max-w-[640px] mb-[28px] text-[32px] xl:text-[48px] font-bold text-white text-left;
+  @apply max-w-[640px] mb-[28px] text-[32px] xl:text-[48px] leading-snug font-bold text-white text-left;
 }
 
 .section-subheader p {
   @apply text-[22px] leading-[36px] text-left;
 }
 
-.section-header::before {
+.section-header::before,
+.blurred-bg::before {
   content: "";
   position: absolute;
   left: calc(50% - 314px);
@@ -116,6 +144,19 @@ nav.open {
   width: 960px;
   pointer-events: none;
   @apply bottom-0 xl:bottom-[80px];
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 120px);
+  top: -180px;
+  width: 360px;
+  height: 360px;
+  background: #010408;
+  filter: blur(220px);
+  transform: translateZ(0);
+  @apply z-0;
 }
 
 .video-container {
@@ -208,8 +249,7 @@ nav.open {
 
 .input {
   width: 100%;
-  height: 84px;
-  padding: 0 82px 0 30px;
+  padding: 30px;
   background: rgba(8, 13, 39, 0.5);
   border: 2px solid rgba(25, 89, 173, 0.25);
   border-radius: 24px;
@@ -221,12 +261,16 @@ nav.open {
   transition: border-color 0.4s;
 }
 
+.input:hover {
+  border-color: rgba(25, 89, 173, 0.5);
+}
+
 .form-input {
   @apply relative;
 }
 
 .form-input::before {
-  @apply content-[''] absolute inset-[5px] border-2 border-[#080d27] rounded-[20px] pointer-events-none;
+  @apply content-[''] absolute inset-[4px] border-2 border-[#080d27] rounded-[20px] pointer-events-none;
 }
 
 @layer base {

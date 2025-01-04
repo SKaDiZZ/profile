@@ -6,7 +6,7 @@ import TwitterIcon from "../icon-components/TwitterIcon";
 import ContactForm from "./ContactForm";
 
 const ContactMe = () => (
-  <section id="contact-me" className="mb-12 mt-24">
+  <section id="contact-me" className="mb-12 mt-24 relative z-10">
     <div className="section-subheader">
       <h4 className="section-subtitle text-left mb-6">Contact Me</h4>
       <h2 className="text-4xl font-bold text-white mb-12">

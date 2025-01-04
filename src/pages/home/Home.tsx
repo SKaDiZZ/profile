@@ -1,9 +1,7 @@
-import { Link } from "react-scroll";
-import profile from "../../assets/images/profile.png";
 import samke from "../../assets/images/samke.png";
-import cv from "../../assets/documents/Samir_Kahvedzic_CV.pdf";
+
 import DatabaseIcon from "../../shared/icon-components/DatabaseIcon";
-import DownloadIcon from "../../shared/icon-components/DownloadIcon";
+
 import MobileIcon from "../../shared/icon-components/MobileIcon";
 import StrokeIcon from "../../shared/icon-components/StrokeIcon";
 import TemplateIcon from "../../shared/icon-components/TemplateIcon";
@@ -14,47 +12,15 @@ import Footer from "../../shared/layout-components/Footer";
 import Projects from "../../shared/layout-components/Projects";
 import Timeline from "../../shared/layout-components/Timeline";
 
+import { Intro } from "@/shared/layout-components/Intro";
+
 const Home = () => {
   return (
-    <div>
-      <div id="home" className="sm:flex items-center md:mt-0">
-        <div className="w-full sm:w-1/2">
-          <h3 className="text-2xl font-bold text-main-brand flex items-center mb-6">
-            <StrokeIcon />
-            Hello
-          </h3>
-          <h1 className="text-5xl sm:text-8xl font-bold text-white">
-            I&rsquo;M SAMIR <br /> KAHVEDZIC
-          </h1>
-          <h2 className="text-4xl my-6">Senior Software Developer</h2>
-          <div className="mt-12 md:mt-0 flex flex-col md:flex-row space-y-12 md:space-y-0 items-center">
-            <Link
-              to="contact-me"
-              className="btn mr-4 sm:mr-12 cursor-pointer"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-215}
-            >
-              Contact Me
-            </Link>
-            <a
-              href={cv}
-              className="text-main-accent hover:underline flex"
-              download
-            >
-              <DownloadIcon />
-              Download CV
-            </a>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2">
-          <img src={profile} alt="samir" />
-        </div>
-      </div>
+    <div className="relative">
+      <Intro />
       <div
         id="what-i-do"
-        className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-y-12 md:gap-x-12 my-12 w-full"
+        className="relative grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-y-12 md:gap-x-12 my-12 w-full"
       >
         <div className="col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-2">
