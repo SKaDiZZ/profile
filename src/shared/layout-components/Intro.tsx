@@ -15,7 +15,7 @@ export const Intro = () => {
         className="flex flex-col md:flex-row justify-between items-center py-4 h-full max-w-screen"
       >
         <div className="flex flex-col text-left blurred-bg">
-          <h3 className="text-xl md:text-2xl font-bold text-main-brand flex items-center mb-2 md:mb-6">
+          <h3 className="text-xl font-medium text-main-brand flex items-center mb-2 md:mb-6">
             <StrokeIcon />
             Hello
           </h3>

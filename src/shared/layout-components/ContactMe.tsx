@@ -2,7 +2,7 @@ import EmailIcon from "../icon-components/EmailIcon";
 import GithubIcon from "../icon-components/GithubIcon";
 import LinkedinIcon from "../icon-components/LinkedinIcon";
 import MarkerIcon from "../icon-components/MarkerIcon";
-import TwitterIcon from "../icon-components/TwitterIcon";
+import XIcon from "../icon-components/XIcon";
 import ContactForm from "./ContactForm";
 
 const ContactMe = () => (
@@ -35,11 +35,11 @@ const ContactMe = () => (
             Email me
           </a>
 
-          <a className="contact-link" href="https://twitter.com/SKaDiZZ">
+          <a className="contact-link" href="https://x.com/SKaDiZZ">
             <span className="mr-4">
-              <TwitterIcon />{" "}
+              <XIcon />{" "}
             </span>
-            Twitter
+            X
           </a>
 
           <a

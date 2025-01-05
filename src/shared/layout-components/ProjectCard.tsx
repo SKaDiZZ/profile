@@ -7,7 +7,7 @@ const ProjectCard = ({ client, name, url, description, tags }: any) => (
     gradientColor="#1959ad80"
   >
     <div className="flex flex-col w-full whitespace-normal p-6 mb-20">
-      <h4 className="card-subtitle text-base text-left">{client}</h4>
+      <h4 className="card-subtitle text-base text-left mb-2">{client}</h4>
       <h2 className="card-title text-left">{name}</h2>
       <p className="text-left text-base">{description}</p>
       <div className="mt-4 text-left">

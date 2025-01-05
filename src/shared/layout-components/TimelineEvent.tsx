@@ -65,7 +65,7 @@ const TimelineEvent = ({
           className="select-none flex flex-col justify-between shadow-2xl mb-6 p-4"
           gradientColor="#1959ad80"
         >
-          <h4 className="section-subtitle text-left mb-4">{timespan}</h4>
+          <h4 className="section-subtitle text-left mb-2">{timespan}</h4>
           <h3 className="font-semibold md:text-lg mb-4 text-left text-white">
             {title}
           </h3>
