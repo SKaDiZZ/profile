@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 const NavBar = () => {
@@ -12,11 +12,6 @@ const NavBar = () => {
       offset: -180,
     },
     {
-      name: "What I do?",
-      link: "what-i-do",
-      offset: -120,
-    },
-    {
       name: "About Me",
       link: "about-me",
       offset: -120,
@@ -27,8 +22,13 @@ const NavBar = () => {
       offset: -120,
     },
     {
+      name: "Experience",
+      link: "timeline",
+      offset: -120,
+    },
+    {
       name: "Contact",
-      link: "contact",
+      link: "contact-me",
       offset: -215,
     },
   ];
@@ -54,16 +54,28 @@ const NavBar = () => {
     }
   };
 
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 768) {
+        setOpen(false);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 md:top-6 z-50 w-full border border-opacity-25 rounded-full bg-main-bg/95 backdrop-blur supports-[backdrop-filter]:bg-main-bg/60">
-      <div className="flex h-14 items-center justify-between px-6">
+    <header className="sticky top-0 md:top-6 z-50 w-full border border-opacity-25 rounded md:rounded-full bg-main-bg/95 backdrop-blur supports-[backdrop-filter]:bg-main-bg/60">
+      <div className="flex h-14 items-center justify-between px-4 md:px-6">
         <div>
           <h3 className="font-logo text-4xl text-white">
-            <span className="text-main-brand">S</span>amir
+            <span className="text-main-accent">S</span>amir
           </h3>
         </div>
         <nav
-          className={`flex items-center gap-4 text-sm xl:gap-6 ${
+          className={`flex items-center gap-4 text-sm md:gap-6 ${
             open ? "open" : ""
           }`}
         >

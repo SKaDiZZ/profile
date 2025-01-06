@@ -58,7 +58,7 @@ export const WhatIDo = () => {
           >
             OVRLAY Labs
           </a>{" "}
-          as frontend tech lead. I lead development of multiple web and mobile
+          as a frontend tech lead. I lead development of multiple web and mobile
           applications.
         </p>
         <p className="mb-6">

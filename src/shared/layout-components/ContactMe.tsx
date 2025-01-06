@@ -3,7 +3,6 @@ import GithubIcon from "../icon-components/GithubIcon";
 import LinkedinIcon from "../icon-components/LinkedinIcon";
 import MarkerIcon from "../icon-components/MarkerIcon";
 import XIcon from "../icon-components/XIcon";
-import ContactForm from "./ContactForm";
 
 const ContactMe = () => (
   <section id="contact-me" className="mb-12 mt-24 relative z-10">
@@ -19,9 +18,9 @@ const ContactMe = () => (
     </div>
     <div className="py-12 bg-gradient-to-r from-transparent via-[#1959ad21] to-transparent relative">
       <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-border to-transparent top-0"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-12">
-        <div className="grid grid-cols-2 gap-6 items-start">
-          <div className="contact-link col-span-2">
+      <div className="my-12">
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+          <div className="flex items-center md:border-r mb-12 md:mb-0 pr-6">
             <span className="mr-4">
               <MarkerIcon />
             </span>
@@ -32,7 +31,7 @@ const ContactMe = () => (
             <span className="mr-4">
               <EmailIcon />{" "}
             </span>
-            Email me
+            Email
           </a>
 
           <a className="contact-link" href="https://x.com/SKaDiZZ">
@@ -58,9 +57,6 @@ const ContactMe = () => (
             </span>
             GitHub
           </a>
-        </div>
-        <div>
-          <ContactForm />
         </div>
       </div>
     </div>

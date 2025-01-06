@@ -7,9 +7,7 @@ const AboutMe = () => (
   >
     <div className="col-span-full md:col-span-1 text-left relative">
       <h4 className="card-subtitle text-base text-left mb-2">About Me</h4>
-      <h2 className="text-4xl font-bold text-white mb-12">
-        Which kind of developer ?
-      </h2>
+      <h2 className="text-4xl font-bold text-white mb-12">Who am I?</h2>
       <p className="mb-6">
         I'm a Senior Software Developer with many years of experience in
         building scalable web applications. I specialize in full-stack
