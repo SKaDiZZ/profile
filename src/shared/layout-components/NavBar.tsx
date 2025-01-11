@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 const NavBar = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   const menuItems = [
@@ -32,17 +31,6 @@ const NavBar = () => {
       offset: -215,
     },
   ];
-
-  const userScrolled = () => {
-    setHasScrolled(true);
-  };
-
-  const userBackToTop = () => {
-    setHasScrolled(false);
-    if (open) {
-      setOpen(false);
-    }
-  };
 
   const toggleOpen = () => {
     setOpen(!open);
