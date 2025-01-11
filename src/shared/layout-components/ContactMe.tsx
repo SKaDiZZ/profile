@@ -19,7 +19,7 @@ const ContactMe = () => (
     <div className="py-12 bg-gradient-to-r from-transparent via-[#1959ad21] to-transparent relative">
       <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-border to-transparent top-0"></div>
       <div className="my-12">
-        <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center relative z-10">
           <div className="flex items-center md:border-r mb-12 md:mb-0 pr-6">
             <span className="mr-4">
               <MarkerIcon />
